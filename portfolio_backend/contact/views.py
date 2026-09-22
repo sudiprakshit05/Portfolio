@@ -1,11 +1,14 @@
-from django.shortcuts import render
+
+import os
+
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from django.core.mail import EmailMessage
 
-from .models import *
-# Create your views here.
+import resend
+
+from .models import ContactMessage
+
 
 @api_view(['POST'])
 def contact_message(request):
@@ -24,27 +27,33 @@ def contact_message(request):
             status=status.HTTP_400_BAD_REQUEST
         )
 
+    # Save message to database
     ContactMessage.objects.create(
         name=name,
         email=email,
         subject=subject,
         message=message
     )
-    email_message = EmailMessage(
-    subject=f"Portfolio Contact: {subject}",
-    body=f"""
-    Name: {name}
-    Email: {email}
 
-    Message:
-    {message}
-    """,
-        from_email=None,
-        to=["srakshit923@gmail.com"],
-        reply_to=[email],
-    )
+    # Send email using Resend
+    resend.api_key = os.getenv("RESEND_API_KEY")
 
-    email_message.send(fail_silently=False)
+    resend.Emails.send({
+        "from": "onboarding@resend.dev",
+        "to": ["srakshit923@gmail.com"],
+        "subject": f"Portfolio Contact: {subject}",
+        "html": f"""
+        <h3>New Portfolio Contact Message</h3>
+
+        <p><strong>Name:</strong> {name}</p>
+        <p><strong>Email:</strong> {email}</p>
+        <p><strong>Subject:</strong> {subject}</p>
+
+        <p><strong>Message:</strong></p>
+        <p>{message}</p>
+        """
+    })
+
     return Response(
         {
             'success': True,

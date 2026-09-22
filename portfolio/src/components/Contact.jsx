@@ -39,7 +39,7 @@ function Contact() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/contact/",
+        "https://sudip-portfolio-backend-v9d9.onrender.com/api/contact/",
         {
           method: "POST",
 
