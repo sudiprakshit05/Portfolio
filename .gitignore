@@ -1,0 +1,29 @@
+# Frontend
+portfolio/node_modules/
+portfolio/dist/
+portfolio/.env
+
+# Backend
+portfolio_backend/venv/
+portfolio_backend/__pycache__/
+portfolio_backend/**/__pycache__/
+portfolio_backend/db.sqlite3
+portfolio_backend/.env
+
+# Python
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Personal files
+portfolio/public/mypic.jpg
+portfolio/public/pic.jpeg
+portfolio/public/profesional_pic.jpeg
+portfolio/public/sudip_rakshit_cv.pdf

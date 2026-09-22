@@ -1,0 +1,160 @@
+@media (max-width: 768px) {
+
+  .experience-section {
+    padding: 80px 6%;
+  }
+
+  .timeline {
+    margin-top: 50px;
+  }
+
+  .timeline-item {
+    gap: 20px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-content h3 {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .experience-section {
+    padding: 70px 5%;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    gap: 15px;
+  }
+
+  .timeline-icon {
+    min-width: 42px;
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .timeline-content {
+    padding: 16px;
+  }
+
+  .timeline-content h3 {
+    font-size: 19px;
+  }
+
+  .timeline-content h4 {
+    font-size: 14px;
+  }
+
+  .timeline-content p {
+    font-size: 14px;
+  }
+}
+
+.experience-section {
+  min-height: 100vh;
+  padding: 100px 10%;
+  background: #0a0a0a;
+}
+
+.experience-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.timeline {
+  position: relative;
+  max-width: 850px;
+  margin: 70px auto 0;
+}
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+  left: 25px;
+  top: 0;
+  bottom: 0;
+
+  width: 2px;
+
+  background: #252525;
+}
+
+.timeline-item {
+  position: relative;
+
+  display: flex;
+  gap: 35px;
+
+  margin-bottom: 60px;
+}
+
+.timeline-icon {
+  min-width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #151515;
+  border: 2px solid #00adb5;
+  border-radius: 50%;
+
+  color: #00adb5;
+
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-content {
+  flex: 1;
+
+  padding: 25px;
+
+  background: #151515;
+  border: 1px solid #252525;
+  border-radius: 10px;
+}
+
+.timeline-date {
+  display: inline-block;
+
+  color: #00adb5;
+  font-size: 13px;
+
+  margin-bottom: 12px;
+}
+
+.timeline-content h3 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.timeline-content h4 {
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: 500;
+
+  margin-bottom: 18px;
+}
+
+.timeline-content p {
+  color: #aaaaaa;
+  line-height: 1.7;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.timeline-content strong {
+  color: #00adb5;
+}
