@@ -138,6 +138,7 @@ MAILERS = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://astounding-stardust-370410.netlify.app/",
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
