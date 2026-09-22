@@ -41,6 +41,7 @@ def contact_message(request):
     resend.Emails.send({
         "from": "onboarding@resend.dev",
         "to": ["sudiprakshit05@gmail.com"],
+        "reply_to": [email],
         "subject": f"Portfolio Contact: {subject}",
         "html": f"""
         <h3>New Portfolio Contact Message</h3>
