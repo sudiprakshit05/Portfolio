@@ -9,6 +9,7 @@ portfolio_backend/__pycache__/
 portfolio_backend/**/__pycache__/
 portfolio_backend/db.sqlite3
 portfolio_backend/.env
+portfolio_backend/staticfiles/
 
 # Python
 *.pyc
